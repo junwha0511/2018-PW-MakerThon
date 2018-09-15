@@ -1,0 +1,50 @@
+int servoX = 2;
+int servoY = 3;
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+
+void loop() {
+  //???
+  //*??
+  classNotUsingComputer();
+  //*??
+  classUsingComputer();
+  //*??
+  classUsingComputer();
+  //*??
+  classNotUsingComputer();
+  //*??
+  classUsingComputer();
+  //*??
+  classUsingComputer();
+  //*??
+  classNotUsingComputer();
+  //*??? ??
+  endSystem();
+}
+
+void classUsingComputer(){
+  analogWrite(servoY, 30); //?? ?? ??
+  delay(10000); //??? ?? ??? ???
+  analogWrite(servoY, 0); //?? ?? ??
+  delay(1000*60*50); //50? ????
+  analogWrite(servoY, 30); //?? ?? ??
+  delay(300); //UI ??
+  analogWrite(servoY, 0); //?? ?? ??
+  analogWrite(servoX, 30); //??? ??
+  delay(300); //UI ??
+  analogWrite(servoY, 30);//?? ?? ??
+  delay(300); //UI ??
+  analogWrite(servoY, 0); //?? ?? ??
+  delay(1000*60*10); //10? ????
+}
+void classNotUsingComputer(){
+  delay(1000*60*60); //????+????
+}
+
+void endSystem(){
+  
+}
+
