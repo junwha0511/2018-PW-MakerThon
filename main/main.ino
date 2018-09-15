@@ -1,4 +1,4 @@
-#include<Adafruit_Thermal.h>
+s#include<Adafruit_Thermal.h>
 #include<SoftwareSerial.h>
 
 const int tx_pin = 1;
