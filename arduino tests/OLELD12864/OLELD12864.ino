@@ -31,7 +31,7 @@ void setup()   {
   delay(2000);
 
   display.clearDisplay();
-
+  
   setLine(0,"English words Printer");
   setLine(1,"");
   setLine(2,"");
@@ -40,7 +40,7 @@ void setup()   {
   
   delay(2000);
 
-
+  scene1();
 }
 
 void loop() {
@@ -69,15 +69,20 @@ void setLine(int line, String s){
 
 //외부 명령을 기다리는 중앙 처리 함수(시간, 리모컨)
 int central(int sceneNumber){
-  return 1;
+  int a = -1;
+  if(Serial.available()){
+      a=(Serial.read()-48);
+  }
+  Serial.println(a);
+  return a;
 }
 
 //Scene1, 첫 화면
 void scene1(){
   setLine(0,"English words Printer");
-  setLine(1,"1. Set the print Time");
-  setLine(2,"2. Set the current Time");
-  setLine(3,"3. help");
+  setLine(1,"1.Set the print Time");
+  setLine(2,"2.Set the current Time");
+  setLine(3,"3.help");
   printScene(lines);
   
   int order = -1;
