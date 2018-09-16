@@ -35,6 +35,8 @@ void setup()
   initOLED();
   initSD();
   initPrinter();
+  
+  printWord(1);
 }
 
 void loop(){
