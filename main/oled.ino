@@ -29,11 +29,13 @@ void setLine(int line, String s){
 
 //외부 명령을 기다리는 중앙 처리 함수(시간, 리모컨)
 int central(int sceneNumber){
-  int a = -1;
-  if(Serial.available()){
-      a=(Serial.read()-48);
+  int a=-1;
+  switch(sceneNumber){
+    case 1:
+      while((a=receiveTheValue())<0);
+      Serial.println("Ree");
+      break;
   }
-  Serial.println(a);
   return a;
 }
 

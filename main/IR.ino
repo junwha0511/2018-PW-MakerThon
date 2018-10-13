@@ -17,10 +17,10 @@ int receiveTheValue(){
     if (irrecv.decode(&results)) {
       delay(50); //값을 비울 때까지 기다림
       irrecv.resume(); // 다음 값을 받을 수 있도록 함
-      
+
       return mappingData(results.value); //mappingData에서 해시값을 결과값으로 변환해 리턴
       
-    }
+    }Serial.println(mappingData);
     delay(50);
   return -1; //값을 입력받지 못했을 경우 음수 리턴
 }

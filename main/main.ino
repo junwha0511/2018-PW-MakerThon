@@ -35,8 +35,7 @@ void setup()
   initOLED();
   initSD();
   initPrinter();
-  
-  printWord(1);
+  scene1();
 }
 
 void loop(){
