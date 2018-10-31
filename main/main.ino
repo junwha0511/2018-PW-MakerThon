@@ -9,6 +9,10 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
+#include <talkie.h>
+#include "talkie.h"
+
+
 #define TX_PIN 6
 #define RX_PIN 5
 
@@ -35,7 +39,7 @@ void setup()
   initOLED();
   initSD();
   initPrinter();
-  scene1();
+  printWord(1);
 }
 
 void loop(){

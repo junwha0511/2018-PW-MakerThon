@@ -33,7 +33,6 @@ int central(int sceneNumber){
   switch(sceneNumber){
     case 1:
       while((a=receiveTheValue())<0);
-      Serial.println("Ree");
       break;
   }
   return a;
@@ -41,66 +40,18 @@ int central(int sceneNumber){
 
 //Scene1, 첫 화면
 void scene1(){
-  setLine(0,"English words Printer");
-  setLine(1,"1.Set the print Time");
-  setLine(2,"2.Set the current Time");
-  setLine(3,"3.help");
-  printScene(lines);
-  
-  int order = -1;
-  while((order=central(1))<0); //order가 들어올 때까지 기다린다.
-  
-  if(order==1){//Call Scene2
-    scene2();
-  }else if(order==2){//Call Scene3
-    scene3();
-  }else if(order==3){//Call Scene4
-    scene4();
-  }else if(order==4){//Call Scene5
-    scene5(); //Scene5 호출
-  }
-}
-
-
-//Scene2, 프린트 시간 설정 화면
-void scene2(){
-  setLine(0,"Please Set the Print Time");
-  setLine(1,"This time is 00:00");
-  setLine(2,"hour: ");
+  setLine(0,"");
+  setLine(1,"Hi");
+  setLine(2,"English word printer");
   setLine(3,"");
   printScene(lines);
-  //시 설정
-  int hour=-1;
-  while((hour=central(2))<0); //값이 들어올 때까지 기다린다.
-  setLine(2,"hour: "+String(hour));
-  setLine(3,"minutes: ");
-  printScene(lines);
-  //분 설정
-  int minutes=-1;
-  while((minutes=central(2))<0); //값이 들어올 때까지 기다린다.
-  setLine(3,"minutes: "+String(minutes));
+
+  int ok=-1;
+  while((ok=central(4))<0); //값이 들어올 때까지 기다린다.
+  
+  
 }
 
-//Scene3, 현재 시간 설정 화면
-void scene3(){
-  setLine(0,"Please Set the Current Time");
-  setLine(1,"This time is 00:00");
-  setLine(2,"hour: ");
-  setLine(3,"");
-  printScene(lines);
-  //시 설정
-  int hour=-1;
-  while((hour=central(3))<0); //값이 들어올 때까지 기다린다.
-  setLine(2,"hour: "+String(hour));
-  setLine(3,"minutes: ");
-  printScene(lines);
-  //분 설정
-  int minutes=-1;
-  while((minutes=central(3))<0); //값이 들어올 때까지 기다린다.
-  setLine(3,"minutes: "+String(minutes));
-}
-
-//Scene4, Help
 void scene4(){
   setLine(0,"English words Printer");
   setLine(1,"");

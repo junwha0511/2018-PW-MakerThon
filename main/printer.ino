@@ -11,6 +11,9 @@ void printWord(int a){
   printBitmapSD(700,20); //printBitmapSD 함수 실행
   printer.feed(1); //빈 칸 한 칸 출력
   f.close();
+  delay(3000);
+  Serial.write(1);
+  delay(500);
 }
 
 //Thermal printer 라이브러리에 프린팅을 걸어주는 함수
