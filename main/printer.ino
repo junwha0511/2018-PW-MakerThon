@@ -10,9 +10,17 @@ void printWord(int a){
   f = SD.open(fp,FILE_READ); //파일 열기
   printBitmapSD(700,20); //printBitmapSD 함수 실행
   printer.feed(1); //빈 칸 한 칸 출력
+  int firstTime = millis();
+  int secondTime = millis();
+  while( receiveTheValue()<0 and (secondTime-firstTime<6000){ //1분 내에 IR 입력
+      secondTime = millis();  
+  }
+
+  if((secondTime-firstTime)>6000){
+    Serial.write(1);
+  }
   f.close();
-  delay(3000);
-  Serial.write(1);
+  
   delay(500);
 }
 
